@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">hongappdetector</string>
+    <string name="infotext">Info</string>
+    <string name="boton_abrirgaleria">Abrir Galería</string>
+    <string name="boton_abrircamara">Abrir Cámara</string>
+    <string name="camaraimg">TODO</string>
+    <string name="galeriaimg">TODO</string>
+    <string name="infoimg">TODO</string>
+    <string name="ImageViwerimg">TODO</string>
+    <string name="homebutton">Inicio</string>
+    <string name="buttonOk">Button</string>
+    <string name="imagen_seleccionada_text">Imagen Seleccionada</string>
+</resources>
