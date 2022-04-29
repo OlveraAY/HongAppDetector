@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             if(boton == 1){
                 numBoton = 1
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                    requestOpernCamera()
+                    requestOpenCamera()
                 }
                 else{
                     requestPermissionLauncher.launch(Manifest.permission.CAMERA)
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             if (boton == 1){
-                requestOpernCamera()
+                requestOpenCamera()
             }
             else{
                 requestOpenStorage()
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     ){
         result -> if(result){
             if (numBoton == 1){
-                requestOpernCamera()
+                requestOpenCamera()
             }
             else{
                 requestOpenStorage()
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun requestOpernCamera() {
+    private fun requestOpenCamera() {
         Toast.makeText(this, "Cámara", Toast.LENGTH_SHORT).show()
     }
 

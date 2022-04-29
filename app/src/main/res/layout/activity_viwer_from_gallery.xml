@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ActivityViwerFromGallery">
 
     <ImageView
@@ -23,13 +24,15 @@
         android:id="@+id/buttonHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/homebutton"
         android:textColor="#000000"
         android:textSize="16sp"
         app:icon="@drawable/ic_baseline_home_24"
         app:iconTint="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -37,12 +40,14 @@
         android:id="@+id/buttonOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
-        android:text="@string/buttonOk"
+        android:layout_marginEnd="32dp"
+        android:text="@string/analizar_imagen"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonHome"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:ignore="MissingConstraints" />
 
@@ -55,6 +60,7 @@
         android:layout_marginEnd="91dp"
         android:text="@string/imagen_seleccionada_text"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
