@@ -4,9 +4,10 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
-import android.widget.Toast
+import android.provider.MediaStore
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -72,7 +73,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestOpenCamera() {
-        Toast.makeText(this, "Cámara", Toast.LENGTH_SHORT).show()
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startForActivityCamera.launch(intent)
     }
 
     private val startForActivityGallery = registerForActivityResult(
@@ -86,12 +88,34 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val startForActivityCamera = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){
+        result -> if (result.resultCode == Activity.RESULT_OK){
+            val data = result!!.data?.extras
+            val viewerCamera = Intent(this, ActivityViewerFromCamera::class.java)
+            viewerCamera.putExtra("image", data)
+            startActivity(viewerCamera)
+
+        }
+    }
 
     private fun requestOpenStorage() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*"
         startForActivityGallery.launch(intent)
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
